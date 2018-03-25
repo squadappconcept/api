@@ -2,6 +2,18 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+env_variables:
+    CLOUDSQL_CONNECTION_NAME: crack-meridian-198419:us-west1:squad-store
+    CLOUDSQL_USER: root
+    CLOUDSQL_PASSWORD: tfh81o8Ll2MNg6Cs
+    SESSION_ID_ENCRYPTION_KEY: '668b5269-5bc6-44dd-9655-92fcf7fd34f0'
+
+libraries:
+- name: MySQLdb
+  version: "latest"
+- name: pycrypto
+  version: "latest"
+
 handlers:
 - url: /.*
   script: main.app
