@@ -6,7 +6,9 @@ env_variables:
     CLOUDSQL_CONNECTION_NAME: crack-meridian-198419:us-west1:squad-store
     CLOUDSQL_USER: root
     CLOUDSQL_PASSWORD: tfh81o8Ll2MNg6Cs
-    SESSION_ID_ENCRYPTION_KEY: '668b5269-5bc6-44dd-9655-92fcf7fd34f0'
+    SESSION_ID_ENCRYPTION_KEY: 87bc73d6-3c55-29a3-b8e6-7a949a2713c8
+    SQLALCHEMY_DATABASE_URI: >-
+      mysql+mysqldb://root:tfh81o8Ll2MNg6Cs@/squad?unix_socket=/cloudsql/crack-meridian-198419:us-west1:squad-store
 
 libraries:
 - name: MySQLdb
@@ -17,3 +19,6 @@ libraries:
 handlers:
 - url: /.*
   script: main.app
+
+beta_settings:
+    cloud_sql_instances: crack-meridian-198419:us-west1:squad-store
